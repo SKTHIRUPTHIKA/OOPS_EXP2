@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class NumberSearch {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int[] numbers = new int[100]; 
+        int n, searchNumber, i, count = 0;
+
+        System.out.print("How many numbers do you want to enter? ");
+        n = scanner.nextInt();
+
+        
+        System.out.println("Enter the numbers: ");
+        i = 0;
+        while (i < n) {
+            numbers[i] = scanner.nextInt();
+            i++;
+        }
+
+        System.out.print("Enter the number to be searched: ");
+        searchNumber = scanner.nextInt();
+
+        i = 0;
+        int found = 0;
+        while (i < n) {
+            if (numbers[i] == searchNumber) {
+                found++;
+            }
+            i++;
+        }
+        if (found > 0) {
+            System.out.println("Number Found " + found + " times");
+        } else {
+            System.out.println("The number not available");
+        }
+
+        scanner.close();
+    }
+}
